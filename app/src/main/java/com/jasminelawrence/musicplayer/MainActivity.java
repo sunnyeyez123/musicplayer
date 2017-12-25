@@ -10,9 +10,12 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
+    private int songCounter = 0;
     private TextView volumeTextView;
     private Button playButton,pauseButton, resetButton, volUpButton, volDownButton;
     private Button prevButton,nextButton;
@@ -23,7 +26,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMediaPlayer = MediaPlayer.create(this, R.raw.baby_music_box_daniel_simion);
+        ArrayList<Integer> songs = new ArrayList<Integer>();
+        songs.add(R.raw.carol_of_the_bells);
+        songs.add(R.raw.herald);
+        songs.add(R.raw.o_holy_night);
+        songs.add(R.raw.we_wish_you_a_merry_christmas);
+
+
+        mMediaPlayer = MediaPlayer.create(this, songs.get(songCounter));
 
         volumeTextView = (TextView) findViewById(R.id.volume_text);
 
