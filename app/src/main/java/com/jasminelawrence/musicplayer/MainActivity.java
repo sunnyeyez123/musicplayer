@@ -26,14 +26,11 @@ public class MainActivity extends AppCompatActivity {
     public void pauseSong(View view){
         mMediaPlayer.pause();
 
-        mediaPlayer.reset();
 
     }
 
     public void resetSong(View view){
-        mMediaPlayer.pause();
-
-        mediaPlayer.reset();
+        mMediaPlayer.reset();
 
     }
 }
