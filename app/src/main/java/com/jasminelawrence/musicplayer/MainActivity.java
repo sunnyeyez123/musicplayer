@@ -9,6 +9,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
+    float volume = (float)1.0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void increaseVolume(View view){
 
-        mMediaPlayer.setVolume((float)0.75, (float)0.75);
+        if (volume <1.0){
+
+            mMediaPlayer.setVolume(volume += .1, volume += .1);
+
+        }
+
 
         Toast.makeText(getApplicationContext(), "Volume Up",Toast.LENGTH_SHORT).show();
 
@@ -54,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decreaseVolume(View view){
-        mMediaPlayer.setVolume((float)0.25, (float)0.25);
+        if (volume > .10){
 
+            mMediaPlayer.setVolume(volume -= .1, volume -= .1);
+
+        }
 
         Toast.makeText(getApplicationContext(), "Volume down",Toast.LENGTH_SHORT).show();
 
