@@ -14,7 +14,7 @@
         android:layout_gravity="center"
 
         android:layout_weight="1"
-        android:text="Enjoy Some Music!"
+        android:text="Enjoy Some Christmas Music!"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
 
         />
