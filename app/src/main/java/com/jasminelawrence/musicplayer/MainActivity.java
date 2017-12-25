@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
     private TextView volumeTextView;
     private Button playButton,pauseButton, resetButton, volUpButton, volDownButton;
+    private Button prevButton,nextButton;
+
     private float volume = (float)0.50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
          resetButton = (Button)findViewById(R.id.reset_button);
           volUpButton = (Button)findViewById(R.id.volup_button);
           volDownButton = (Button)findViewById(R.id.voldown_button);
+        prevButton = (Button)findViewById(R.id.prev_button);
+        nextButton = (Button)findViewById(R.id.next_button);
 
 
         playButton.setOnClickListener(new View.OnClickListener() {
