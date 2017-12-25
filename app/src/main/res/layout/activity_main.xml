@@ -66,12 +66,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/volup_button"
+            android:id="@+id/voldown_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Volume \n Up" />
-
+            android:text="Volume \n Down" />
+        
         <TextView
             android:id="@+id/volume_text"
             android:layout_width="0dp"
@@ -81,12 +81,15 @@
             android:gravity="center"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
+
+
         <Button
-            android:id="@+id/voldown_button"
+            android:id="@+id/volup_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Volume \n Down" />
+            android:text="Volume \n Up" />
+
 
 
     </LinearLayout>

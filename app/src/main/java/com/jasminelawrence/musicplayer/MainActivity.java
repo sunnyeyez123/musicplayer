@@ -5,11 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
+    private TextView volumeTextView;
     private Button playButton,pauseButton, resetButton, volUpButton, volDownButton;
     private float volume = (float)0.50;
     @Override
@@ -19,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMediaPlayer = MediaPlayer.create(this, R.raw.baby_music_box_daniel_simion);
 
-
+        volumeTextView = (TextView) findViewById(R.id.volume_text);
 
         playButton = (Button) findViewById(R.id.play_button);
           pauseButton = (Button) findViewById(R.id.pause_button);
@@ -64,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (volume <1.0){
 
-                    mMediaPlayer.setVolume(volume += .1, volume += .1);
+                    mMediaPlayer.setVolume(volume += .05, volume += .05);
+                    volumeTextView.setText(String.valueOf(volume*100));
+                    //TODO: format
 
                 }
 
@@ -80,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (volume > .10){
 
-                    mMediaPlayer.setVolume(volume -= .1, volume -= .1);
+                    mMediaPlayer.setVolume(volume -= .05, volume -= .05);
+                    volumeTextView.setText(String.valueOf( volume*100));
+                    //TODO: format
+
 
                 }
 
