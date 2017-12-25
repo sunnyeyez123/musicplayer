@@ -62,6 +62,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mMediaPlayer.seekTo(0);
+
+                Toast.makeText(getApplicationContext(), "Restarting song",Toast.LENGTH_SHORT).show();
+
+                playButton.setEnabled(true);
+
+            }
+        });
+
+
         volUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,13 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void resetSong(View view){
-        mMediaPlayer.seekTo(0);
 
-        Toast.makeText(getApplicationContext(), "Restarting song",Toast.LENGTH_SHORT).show();
-
-
-    }
 
     @Override
     protected void onStop() {
