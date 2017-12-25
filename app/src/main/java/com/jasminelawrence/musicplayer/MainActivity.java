@@ -43,4 +43,29 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void increaseVolume(View view){
+
+        mMediaPlayer.setVolume((float)0.75, (float)0.75);
+
+        Toast.makeText(getApplicationContext(), "Volume Up",Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    public void decreaseVolume(View view){
+        mMediaPlayer.setVolume((float)0.25, (float)0.25);
+
+
+        Toast.makeText(getApplicationContext(), "Volume down",Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mMediaPlayer.release();
+        mMediaPlayer = null;
+    }
 }

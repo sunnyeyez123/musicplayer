@@ -11,7 +11,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Enjoy Some Music!"
+        android:layout_gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="playSong"
+            android:onClick="increaseVolume"
             android:text="Volume Up" />
 
         <Button
@@ -64,7 +68,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="pauseSong"
+            android:onClick="decreaseVolume"
             android:text="Volume Down" />
 
 
