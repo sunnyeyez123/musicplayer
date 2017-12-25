@@ -158,6 +158,8 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                            /* load the new source */
+                    Toast.makeText(getApplicationContext(), "Next song",Toast.LENGTH_SHORT).show();
+
 
                     mMediaPlayer.setDataSource(getApplicationContext(),Uri.parse(playlist[songCounter]));
                     /* Prepare the mediaplayer */
@@ -175,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
 
        /* start */
                 mMediaPlayer.start();
+                pauseButton.setEnabled(true);
+                playButton.setEnabled(false);
+
 
                 trackNumberTextView.setText(String.valueOf(songCounter + 1)  );
 
@@ -196,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                            /* load the new source */
+                    Toast.makeText(getApplicationContext(), "Previous song",Toast.LENGTH_SHORT).show();
+
 
                     mMediaPlayer.setDataSource(getApplicationContext(),Uri.parse(playlist[songCounter]));
                     /* Prepare the mediaplayer */
@@ -203,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } catch(IOException ie) {
-                    Toast.makeText(getApplicationContext(), "No next song",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No prev song",Toast.LENGTH_SHORT).show();
 
                     ie.printStackTrace();
 
@@ -213,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
 
        /* start */
                 mMediaPlayer.start();
+                pauseButton.setEnabled(true);
+                playButton.setEnabled(false);
+
 
                 trackNumberTextView.setText(String.valueOf(songCounter + 1)  );
 
