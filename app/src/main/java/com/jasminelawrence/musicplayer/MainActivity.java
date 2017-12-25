@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetSong(View view){
         mMediaPlayer.seekTo(0);
-        
+
         Toast.makeText(getApplicationContext(), "Restarting song",Toast.LENGTH_SHORT).show();
 
 

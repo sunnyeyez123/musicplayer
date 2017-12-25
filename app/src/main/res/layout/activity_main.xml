@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="bottom"
     tools:context="com.jasminelawrence.musicplayer.MainActivity">
 
     <TextView
@@ -12,24 +13,62 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <Button
-        android:id="@+id/play_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="playSong"
-        android:text="Play" />
-    <Button
-        android:id="@+id/pause_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="pauseSong"
-        android:text="Pause" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="playSong"
+            android:text="Play" />
+
+        <Button
+            android:id="@+id/pause_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="pauseSong"
+            android:text="Pause" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="resetSong"
+            android:text="Reset" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="resetSong"
-        android:text="Reset" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/volup_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="playSong"
+            android:text="Volume Up" />
+
+        <Button
+            android:id="@+id/voldown_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="pauseSong"
+            android:text="Volume Down" />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
