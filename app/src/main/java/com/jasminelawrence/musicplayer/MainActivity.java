@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        
+
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,9 +176,6 @@ public class MainActivity extends AppCompatActivity {
        /* start */
                 mMediaPlayer.start();
 
-
-
-
                 trackNumberTextView.setText(String.valueOf(songCounter + 1)  );
 
             }
@@ -188,10 +185,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // mMediaPlayer.start();
-                //Toast.makeText(getApplicationContext(), "Playing song",Toast.LENGTH_SHORT).show();
-                // pauseButton.setEnabled(true);
-                //playButton.setEnabled(false);
+                if (songCounter >0) {
+                    songCounter -= 1;
+
+                } else {
+                    songCounter = 3;
+                }
+
+                mMediaPlayer.reset();
+
+                try {
+                           /* load the new source */
+
+                    mMediaPlayer.setDataSource(getApplicationContext(),Uri.parse(playlist[songCounter]));
+                    /* Prepare the mediaplayer */
+                    mMediaPlayer.prepare();
+
+
+                } catch(IOException ie) {
+                    Toast.makeText(getApplicationContext(), "No next song",Toast.LENGTH_SHORT).show();
+
+                    ie.printStackTrace();
+
+                }
+
+
+
+       /* start */
+                mMediaPlayer.start();
+
+                trackNumberTextView.setText(String.valueOf(songCounter + 1)  );
+
 
             }
         });
