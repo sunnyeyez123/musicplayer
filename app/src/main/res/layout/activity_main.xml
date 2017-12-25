@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="bottom"
+    android:orientation="vertical"
     tools:context="com.jasminelawrence.musicplayer.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
-
-        android:text="Enjoy Some Music!"
         android:layout_gravity="center"
+
+        android:layout_weight="1"
+        android:text="Enjoy Some Music!"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
 
         />
@@ -23,10 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
-        android:src="@drawable/music"
-
         android:scaleType="centerCrop"
-        />
+
+        android:src="@drawable/music" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,16 +70,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="increaseVolume"
-            android:text="Volume Up" />
+            android:text="Volume \n Up" />
+
+        <TextView
+            android:id="@+id/volume_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="50"
+            android:gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
         <Button
             android:id="@+id/voldown_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="decreaseVolume"
-            android:text="Volume Down" />
+            android:text="Volume \n Down" />
 
 
     </LinearLayout>
