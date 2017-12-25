@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
     private Button playButton,pauseButton, resetButton, volUpButton, volDownButton;
-    private float volume = (float)1.0;
+    private float volume = (float)0.50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +57,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        volUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (volume <1.0){
+
+                    mMediaPlayer.setVolume(volume += .1, volume += .1);
+
+                }
+
+
+                Toast.makeText(getApplicationContext(), "Volume Up",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        volDownButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (volume > .10){
+
+                    mMediaPlayer.setVolume(volume -= .1, volume -= .1);
+
+                }
+
+                Toast.makeText(getApplicationContext(), "Volume down",Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
+
+
     }
 
 
@@ -65,32 +101,6 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer.seekTo(0);
 
         Toast.makeText(getApplicationContext(), "Restarting song",Toast.LENGTH_SHORT).show();
-
-
-    }
-
-    public void increaseVolume(View view){
-
-        if (volume <1.0){
-
-            mMediaPlayer.setVolume(volume += .1, volume += .1);
-
-        }
-
-
-        Toast.makeText(getApplicationContext(), "Volume Up",Toast.LENGTH_SHORT).show();
-
-
-    }
-
-    public void decreaseVolume(View view){
-        if (volume > .10){
-
-            mMediaPlayer.setVolume(volume -= .1, volume -= .1);
-
-        }
-
-        Toast.makeText(getApplicationContext(), "Volume down",Toast.LENGTH_SHORT).show();
 
 
     }
