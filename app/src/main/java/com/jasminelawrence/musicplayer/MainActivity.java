@@ -118,6 +118,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               // mMediaPlayer.start();
+                //Toast.makeText(getApplicationContext(), "Playing song",Toast.LENGTH_SHORT).show();
+               // pauseButton.setEnabled(true);
+                //playButton.setEnabled(false);
+
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // mMediaPlayer.start();
+                //Toast.makeText(getApplicationContext(), "Playing song",Toast.LENGTH_SHORT).show();
+                // pauseButton.setEnabled(true);
+                //playButton.setEnabled(false);
+
+            }
+        });
+
+
+
 
 
     }
