@@ -12,5 +12,9 @@
 
 
 
+    <style name="RedAccentButton" >
+        <item name="android:background">@color/accent</item>
+
+    </style>
 
 </resources>
