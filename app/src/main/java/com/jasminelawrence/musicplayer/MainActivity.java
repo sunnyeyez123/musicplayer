@@ -65,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.next_button);
 
 
+        mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+
+                Toast.makeText(getApplicationContext(), "I'm Done!", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
